@@ -1,0 +1,72 @@
+03:10:36 **** Incremental Build of configuration Debug for project IC_tester ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../lcd.h:14,
+                 from ../main.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+../main.c: In function 'main':
+../main.c:29: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:31: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:60: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:62: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:74: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:76: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:86: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:129: warning: passing argument 3 of 'search_IC_name' from incompatible pointer type
+../main.c:136: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:152: warning: passing argument 2 of 'EEPROM_readByte' from incompatible pointer type
+../main.c:155: warning: passing argument 2 of 'EEPROM_readByte' from incompatible pointer type
+../main.c:178: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:181: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:186: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:188: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:215: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:217: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:227: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:266: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:305: warning: passing argument 2 of 'EEPROM_readByte' from incompatible pointer type
+../main.c:308: warning: passing argument 2 of 'EEPROM_readByte' from incompatible pointer type
+../main.c:330: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:332: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:343: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:345: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:354: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:427: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:477: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:479: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:508: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+../main.c:510: warning: pointer targets in passing argument 1 of 'LCD_writeString' differ in signedness
+Finished building: ../main.c
+ 
+Building target: IC_tester.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,IC_tester.map -mmcu=atmega32 -o "IC_tester.elf"  ./application.o ./external_eeprom.o ./gpio.o ./keypad.o ./lcd.o ./main.o ./twi.o   
+Finished building target: IC_tester.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S IC_tester.elf  >"IC_tester.lss"
+Finished building: IC_tester.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex IC_tester.elf  "IC_tester.hex"
+Finished building: IC_tester.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 IC_tester.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   27996 bytes (85.4% Full)
+(.text + .data + .bootloader)
+
+Data:        420 bytes (20.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

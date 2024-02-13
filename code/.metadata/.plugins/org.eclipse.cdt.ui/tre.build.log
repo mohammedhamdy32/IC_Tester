@@ -1,0 +1,14 @@
+21:53:23 **** Incremental Build of configuration Debug for project tre ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o sd.o "..\\sd.c" 
+..\sd.c: In function 'main':
+..\sd.c:14:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long long int' [-Wformat=]
+ printf("%x\n",temp);
+          ^
+..\sd.c:18:10: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'long long int' [-Wformat=]
+ printf("%x\n",temp);
+          ^
+gcc -o tre.exe sd.o 
+
+21:53:24 Build Finished. 0 errors, 2 warnings. (took 450ms)
+
